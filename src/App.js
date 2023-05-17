@@ -1,6 +1,6 @@
 import React from 'react'
-import Login from './componente/Login'
-import Signup from './componente/Signup'
+import Login from './componets/Login'
+import Signup from './componets/Signup'
 import { BrowserRouter,Routes,Route } from 'react-router-dom'
 export default function App() {
   return (
