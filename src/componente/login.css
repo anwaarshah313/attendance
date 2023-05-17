@@ -1,0 +1,84 @@
+.out-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(3, 3, 3);
+}
+
+.background{
+background-image: linear-gradient(to bottom right, rgba(115, 208, 255, 0.648), rgba(237, 140, 201, 0.886));
+width: 100%;
+/* display: flex;
+justify-content: center; */
+}
+.radius{
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+    margin: 8%;
+}
+
+.image{
+    height:100%;
+    width: 100%;
+    border-radius: 20px 0px 0px 20px;
+}
+.login-out-div{
+    /* background-color: aqua; */
+    margin: 25% 20% 25% 15%;
+}
+.heading{
+    text-align: center;
+    
+}
+.font{
+    font-family: "Franklin Gothic Medium", "Franklin Gothic", 
+        "ITC Franklin Gothic", Arial, sans-serif; font-size: 24px; font-style: normal; 
+        font-variant: normal; font-weight: 550; line-height: 15.4px; 
+        letter-spacing: .1rem;    
+}
+input{
+    width: 90%;
+    border: none;
+    /* border-bottom: 2px solid red; */
+  padding-left: 10px;
+  outline: none;
+}
+.input-div{
+    margin-top: 30%;
+}
+.btn-out-div{
+text-align: center;
+margin-top: 20%;
+}
+
+.btn-login{
+    background-image: linear-gradient(to bottom right, rgba(115, 208, 255, 0.648), rgba(237, 140, 201, 0.886));
+    border-radius: 50px;
+    width: 100%;
+    border: none;
+    height:43px;
+    font-weight:500;
+}
+.btn-google{
+    background-color: rgb(228, 228, 228);
+    border-radius: 50px;
+    width: 100%;
+    border: none;
+    height: 40px;
+    font-weight:500;
+padding-bottom: 43px;
+}
+.icon-size{
+    font-size: 18pt;
+}
+
+.link-out-div{
+    text-align: center;
+    margin-top: 20%;
+    }
+a{
+    color: rgb(255, 0, 166);
+    font-weight: bold;
+    text-decoration: none;
+}
+
