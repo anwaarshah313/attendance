@@ -1,38 +1,53 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./signup.css"
 import { NavLink } from 'react-router-dom';
 import { AiOutlineTeam, AiFillGoogleCircle, AiOutlineUser, AiOutlineMail } from "react-icons/ai";
 import { BiLockOpen, BiLock } from "react-icons/bi";
 import { FcOk, FcMindMap } from "react-icons/fc";
+// import{getAuth,googleAuthProvider} from "firebase/auth"
 
 export default function Signup() {
 
+    // const auth=getAuth(app);
+    // const provider =new googleAuthProvider();
+   
 
     const [formErrors, setFormErrors] = useState({})
     const [isSubmit, setIsSubmit] = useState(false);
     const [user, setUser] = useState({
         fullName: "",
-        name: "",
-        email: "",
-        password: "",
-        repassword: "",
+        name: "anwar",
+        email: "email@gmail.com",
+        password: "12345",
+        repassword: "12345",
 
 
     });
     let name, value;
+    useEffect(()=>{
+console.log('isSubmitchanged', isSubmit)
+    }, [isSubmit])
     const getUserData = (e) => {
         name = e.target.name;
         value = e.target.value;
         setUser({ ...user, [name]: value });
     };
 
-    const postData = async (e) => {
+    // const proceedPostData = async (e) =>{
+    //     setFormErrors(validate(user));
+    //     setTimeout(postData, 1000);
+    //     e.preventDefault();
+    // }
+
+    // console.log('post data', formErrors);
+    // console.log(Object.keys(formErrors).length, formErrors, user);
+    // console.log('posting data', Object.keys(formErrors).length);
+    
+    const proceedPostData = async (e) => {
         e.preventDefault();
         setFormErrors(validate(user));
-        // console.log(formErrors);
         const { fullName, name, email, password, repassword } = user;
-        if (isSubmit) {
-
+        if (Object.keys(formErrors).length <= 0) {
             const res = await fetch("https://attendance-8a3a1-default-rtdb.firebaseio.com//attendance.json",
                 {
                     method: "POST",
@@ -70,10 +85,10 @@ export default function Signup() {
 
         }
         else {
-
+console.log(formErrors)
         }
-
-
+  
+        // setFormErrors({});
     };
 
     const validate = (values) => {
@@ -117,9 +132,11 @@ export default function Signup() {
        }
        
         if (Object.keys(errors).length <= 0) {
+            console.log('True jj')
             setIsSubmit(true);
+            console.log('True kk')
+
             // console.log(errors)
-            console.log('True')
         }
         else {
             setIsSubmit(false);
@@ -127,6 +144,7 @@ export default function Signup() {
             // console.log(errors)
         }
         console.log(errors)
+        console.log('validation end', formErrors)
         return errors;
 
     };
@@ -210,7 +228,7 @@ export default function Signup() {
                                     </form>
                                     {/* button div */}
                                     <div className='signup-btn-out-div'>
-                                        <button onClick={postData} className='btn-login'>
+                                        <button onClick={proceedPostData} className='btn-login'>
                                             Sign Up
                                         </button><br /><br />
                                         <button className='btn-google'>

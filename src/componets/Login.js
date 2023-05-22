@@ -14,11 +14,11 @@ export default function Login() {
 
 
                         {/* bootsrtap grid  */}
-                        <div class="row">
-                            <div class="col-sm-7">
+                        <div className="row">
+                            <div className="col-sm-7">
                                 <img className='image' src="images/leptop.png" alt="" />
                             </div>
-                            <div class="col-sm-5">
+                            <div className="col-sm-5">
 
                                 {/* login form div */}
                                 <div className='login-out-div'>
